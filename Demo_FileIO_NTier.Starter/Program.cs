@@ -1,0 +1,20 @@
+﻿using Demo_FileIO_NTier.BusinessLogicLayer;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Demo_FileIO_NTier
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IDataService dataService = new CsvDataService();
+            CharacterBLL characterBLL = new CharacterBLL(dataService);
+            Presenter presenter = new Presenter(characterBLL);
+
+        }
+    }
+}
